@@ -118,7 +118,9 @@ struct SignUpView: View {
             .shadow(color: Color.black.opacity(0.08), radius: 20, x: 0, y: 8)
             .padding(.horizontal, 24)
         }
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
+        .navigationTitle("Sign Up")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct MusicPlayerView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var isPlaying: Bool = true
     @State private var progress: Double = 0.28
     @State private var volume: Double = 0.65
@@ -129,10 +130,27 @@ struct MusicPlayerView: View {
                 }
                 .padding(.bottom, 20)
             }
+
+            // Custom back button
+            VStack {
+                HStack {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Color.white.opacity(0.2))
+                            .clipShape(Circle())
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 56)
+                Spacer()
+            }
         }
         .navigationBarHidden(true)
     }
-
 }
 
 #Preview {

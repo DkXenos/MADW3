@@ -83,7 +83,9 @@ struct ExpenseListView: View {
             .background(Color(.systemBackground))
         }
         .background(Color(.systemBackground))
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
+        .navigationTitle("Expense List")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
