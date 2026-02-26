@@ -16,7 +16,6 @@ struct ExpenseCard: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            // Icon
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color.blue)
@@ -26,14 +25,12 @@ struct ExpenseCard: View {
                     .font(.system(size: 22, weight: .semibold))
             }
 
-            // Middle content
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 8) {
                     Text(category)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.primary)
 
-                    // Need indicator
                     HStack(spacing: 4) {
                         Circle()
                             .fill(Color.green)
@@ -43,7 +40,6 @@ struct ExpenseCard: View {
                             .foregroundColor(.primary)
                     }
 
-                    // Want indicator
                     HStack(spacing: 4) {
                         Circle()
                             .fill(Color.red)
@@ -67,7 +63,6 @@ struct ExpenseCard: View {
                 }
             }
 
-            // Chevron
             Image(systemName: "chevron.right")
                 .foregroundColor(.gray)
                 .font(.system(size: 14, weight: .semibold))

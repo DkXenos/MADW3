@@ -19,16 +19,6 @@ struct ExpenseItem: Identifiable {
 struct ExpenseListView: View {
     @State private var searchText: String = ""
 
-    let expenses: [ExpenseItem] = [
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-        ExpenseItem(category: "Food", date: "02/10/2025 09:46", needPercent: 75, wantPercent: 25, amount: "Rp 50.000"),
-    ]
-
     var filteredExpenses: [ExpenseItem] {
         if searchText.isEmpty {
             return expenses
