@@ -130,24 +130,6 @@ struct MusicPlayerView: View {
                 }
                 .padding(.bottom, 20)
             }
-
-            // Custom back button
-            VStack {
-                HStack {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(Color.white.opacity(0.2))
-                            .clipShape(Circle())
-                    }
-                    Spacer()
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 56)
-                Spacer()
-            }
         }
         .navigationBarHidden(true)
     }

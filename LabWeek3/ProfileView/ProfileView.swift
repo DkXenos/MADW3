@@ -98,23 +98,6 @@ struct ProfileView: View {
             .padding(.horizontal, 24)
             .padding(.bottom, 48)
 
-            // Custom back button
-            VStack {
-                HStack {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 18, weight: .semibold))
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background(Color.black.opacity(0.3))
-                            .clipShape(Circle())
-                    }
-                    Spacer()
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 56)
-                Spacer()
-            }
         }
         .navigationBarHidden(true)
     }
