@@ -1,9 +1,3 @@
-//
-//  MusicPlayerView.swift
-//  LabWeek3
-//
-//  Created by Jason Tio on 26/02/26.
-//
 
 import SwiftUI
 
@@ -12,22 +6,21 @@ struct MusicPlayerView: View {
     @State private var isPlaying: Bool = true
     @State private var progress: Double = 0.28
     @State private var volume: Double = 0.65
-
-
+    
+    
     let totalDuration: Double = 226
     let accentColor = Color.white
     let bgColor = Color(red: 0.42, green: 0.27, blue: 0.13)
-
+    
     var elapsedTime: String {
         let secs = Int(progress * totalDuration)
         return String(format: "%d:%02d", secs / 60, secs % 60)
     }
-
-    var remainingTime: String {
-        let secs = Int((1 - progress) * totalDuration)
+    
+    var remainingTime: String { let secs = Int((1 - progress) * totalDuration)
         return String(format: "-%d:%02d", secs / 60, secs % 60)
     }
-
+    
     var body: some View {
         ZStack {
             LinearGradient( //dah gradient ya ini
@@ -39,18 +32,18 @@ struct MusicPlayerView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-
+            
             VStack(spacing: 0) {
                 Spacer()
-
+                
                 Image("mrcy-cover")
                     .resizable()
                     .frame(width: 300, height: 300)
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.5), radius: 20, x: 0, y: 10)
-
+                
                 Spacer().frame(height: 40)
-
+                
                 VStack(spacing: 8) {
                     Text("R.L.M")
                         .font(.title)
@@ -60,9 +53,9 @@ struct MusicPlayerView: View {
                         .font(.title3)
                         .foregroundColor(accentColor.opacity(0.7))
                 }
-
+                
                 Spacer().frame(height: 40)
-
+                
                 VStack(spacing: 8) {
                     Slider(value: $progress, in: 0...1)
                         .tint(accentColor)
@@ -78,17 +71,17 @@ struct MusicPlayerView: View {
                     }
                 }
                 .padding(.horizontal, 24)
-
+                
                 Spacer().frame(height: 30)
-
+                
                 HStack(spacing: 50) {
                     Button(action: {
                     }) {
                         Image(systemName: "backward.fill")
                             .font(.system(size: 30))
-                            .foregroundColor(accentColor)
+                            .foregroundColor(Color.black)
                     }
-
+                    
                     Button(action: {
                         isPlaying.toggle()
                     }) {
@@ -96,7 +89,7 @@ struct MusicPlayerView: View {
                             .font(.system(size: 50))
                             .foregroundColor(accentColor)
                     }
-
+                    
                     Button(action: {
                     }) {
                         Image(systemName: "forward.fill")
@@ -106,7 +99,7 @@ struct MusicPlayerView: View {
                 }
 
                 Spacer().frame(height: 40)
-
+                
                 HStack(spacing: 15) {
                     Image(systemName: "speaker.fill")
                         .foregroundColor(accentColor.opacity(0.7))
@@ -118,9 +111,9 @@ struct MusicPlayerView: View {
                         .foregroundColor(accentColor.opacity(0.7))
                 }
                 .padding(.horizontal, 24)
-
+                
                 Spacer()
-
+                
                 HStack {
                     Spacer()
                     Button(action: {}) {
