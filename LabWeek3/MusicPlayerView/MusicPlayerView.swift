@@ -1,3 +1,10 @@
+//
+//  MusicPlayerView.swift
+//  LabWeek3
+//
+//  Created by Jason Tio on 26/02/26.
+//
+
 import SwiftUI
 
 struct MusicPlayerView: View {
@@ -23,7 +30,15 @@ struct MusicPlayerView: View {
 
     var body: some View {
         ZStack {
-            bgColor.ignoresSafeArea()
+            LinearGradient( //dah gradient ya ini
+                gradient: Gradient(colors: [
+                    Color(red: 0.55, green: 0.31, blue: 0.11),
+                    Color(red: 0.28, green: 0.16, blue: 0.04)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 Spacer()
