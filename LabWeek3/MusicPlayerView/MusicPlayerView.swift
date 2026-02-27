@@ -30,7 +30,6 @@ struct MusicPlayerView: View {
 
                 Image("mrcy-cover")
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
                     .frame(width: 300, height: 300)
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.5), radius: 20, x: 0, y: 10)
