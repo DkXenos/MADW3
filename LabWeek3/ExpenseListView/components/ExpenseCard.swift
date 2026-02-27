@@ -15,64 +15,66 @@ struct ExpenseCard: View {
     var amount: String
 
     var body: some View {
-        Button(action: {
-        }) {
-            HStack(spacing: 12) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.blue)
-                        .frame(width: 52, height: 52)
-                    Image(systemName: "fork.knife")
-                        .foregroundColor(.white)
-                        .font(.system(size: 22, weight: .semibold))
-                }
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: 8) {
-                        Text(category)
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundColor(.primary)
-                        
-                        HStack(spacing: 4) {
+        HStack(spacing: 14) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 14)
+                    .fill(Color.blue)
+                    .frame(width: 56, height: 56)
+                Image(systemName: "fork.knife")
+                    .foregroundColor(.white)
+                    .font(.system(size: 22, weight: .semibold))
+            }
+
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 0) {
+                    Text(category)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.black)
+
+                    Spacer()
+
+                    HStack(spacing: 10) {
+                        HStack(spacing: 5) {
                             Circle()
                                 .fill(Color.green)
-                                .frame(width: 8, height: 8)
+                                .frame(width: 10, height: 10)
                             Text("\(needPercent)% Need")
-                                .font(.system(size: 12))
-                                .foregroundColor(.primary)
+                                .font(.system(size: 13))
+                                .foregroundColor(.black)
                         }
-                        
-                        HStack(spacing: 4) {
+                        HStack(spacing: 5) {
                             Circle()
                                 .fill(Color.red)
-                                .frame(width: 8, height: 8)
+                                .frame(width: 10, height: 10)
                             Text("\(wantPercent)% Want")
-                                .font(.system(size: 12))
-                                .foregroundColor(.primary)
+                                .font(.system(size: 13))
+                                .foregroundColor(.black)
                         }
                     }
-                    
-                    HStack {
-                        Text(date)
-                            .font(.system(size: 13))
-                            .foregroundColor(.blue)
-                        
-                        Spacer()
-                        
-                        Text(amount)
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.blue)
-                    }
                 }
-                
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 14, weight: .semibold))
+
+                HStack {
+                    Text(date)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundColor(.blue)
+
+                    Spacer()
+
+                    Text(amount)
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.blue)
+                }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .background(Color(.systemBackground))
+
+            Image(systemName: "chevron.right")
+                .foregroundColor(Color(.systemGray3))
+                .font(.system(size: 14, weight: .semibold))
         }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 16)
+        .background(Color.white)
+        .cornerRadius(16)
+        .shadow(color: Color.black.opacity(0.08), radius: 6, x: 0, y: 2)
     }
 }
 

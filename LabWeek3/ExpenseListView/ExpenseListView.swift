@@ -19,6 +19,8 @@ struct ExpenseItem: Identifiable {
 struct ExpenseListView: View {
     @State private var searchText: String = ""
 
+    let pageBackground = Color(red: 0.92, green: 0.95, blue: 1.0)
+
     var filteredExpenses: [ExpenseItem] {
         if searchText.isEmpty {
             return expenses
@@ -39,11 +41,11 @@ struct ExpenseListView: View {
                 }
                 .padding(.horizontal, 14)
                 .padding(.vertical, 10)
-                .background(Color(.systemBackground))
+                .background(Color.white)
                 .clipShape(Capsule())
                 .overlay(
                     Capsule()
-                        .stroke(Color(.systemGray3), lineWidth: 1)
+                        .stroke(Color(.systemGray4), lineWidth: 1)
                 )
 
                 Button(action: {}) {
@@ -51,21 +53,21 @@ struct ExpenseListView: View {
                         .foregroundColor(.primary)
                         .font(.system(size: 16, weight: .medium))
                         .frame(width: 42, height: 42)
-                        .background(Color(.systemBackground))
+                        .background(Color.white)
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(.systemGray3), lineWidth: 1)
+                                .stroke(Color(.systemGray4), lineWidth: 1)
                         )
                 }
             }
             .padding(.horizontal, 16)
             .padding(.top, 16)
             .padding(.bottom, 12)
-            .background(Color(.systemBackground))
+            .background(pageBackground)
 
             ScrollView {
-                VStack(spacing: 0) {
+                VStack(spacing: 12) {
                     ForEach(filteredExpenses) { expense in
                         ExpenseCard(
                             category: expense.category,
@@ -74,15 +76,15 @@ struct ExpenseListView: View {
                             wantPercent: expense.wantPercent,
                             amount: expense.amount
                         )
-                        Divider()
-                            .padding(.leading, 80)
+                        .padding(.horizontal, 0)
                     }
                 }
-                .background(Color(.systemBackground))
+                .padding(.vertical, 12)
+                .background(pageBackground)
             }
-            .background(Color(.systemBackground))
+            .background(pageBackground)
         }
-        .background(Color(.systemBackground))
+        .background(pageBackground)
         .navigationBarBackButtonHidden(false)
         .navigationTitle("Expense List")
         .navigationBarTitleDisplayMode(.inline)
